@@ -9,7 +9,7 @@ export default function DropdownMenu({ paths }) {
       </MenuButton>
       <MenuItems
         anchor="bottom end"
-        className="mt-2 w-36 rounded-md border border-zinc-200 bg-white/75 p-1 backdrop-blur-sm outline-none"
+        className="mt-2 w-36 rounded-md border border-zinc-200 bg-white/75 p-1 backdrop-blur-sm outline-none z-20"
       >
         {paths.map((p) => (
           <MenuItem key={p.path}>

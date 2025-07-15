@@ -22,7 +22,7 @@ const paths = [
 
 export default function HeaderNav() {
   return (
-    <header className="fixed top-0 w-full border-b border-dashed border-zinc-300 bg-white/80 backdrop-blur-sm z-50">
+    <header className="fixed top-0 w-full border-b border-dashed border-zinc-300 bg-white/80 backdrop-blur-sm z-10">
       <nav className="mx-auto flex w-full max-w-6xl items-center justify-between p-4">
         <a
           href="/"
