@@ -1,0 +1,183 @@
+{
+  "name": "Evan Rafa Radya Alifian",
+  "nickname": "evanalifian",
+  "alias": "cnsl.lg",
+  "avatar": "/evan-nobg.png",
+  "tagline": "Experience to build website with React and Tailwind CSS",
+  "about": "Hello, i'm Evan Rafa Radya Alifian, a frontend developer from Bangkalan, East Java. Now i study in Universitas Trunojoyo Madura majoring informatic engineering. Curently, i learned DSA (Data Structure and Algorithms) using python.",
+  "socials": [
+    {
+      "name": "Instagram",
+      "icon": "/socials_icon/instagram.svg",
+      "username": "evanalifian",
+      "url": "https://instagram.com/evanalifian"
+    },
+    {
+      "name": "X",
+      "icon": "/socials_icon/x.svg",
+      "username": "evanalifian",
+      "url": "https://x.com/evanalifian"
+    },
+    {
+      "name": "LinkedIn",
+      "icon": "/socials_icon/linkedin.svg",
+      "username": "evanalifian",
+      "url": "https://linkedin.com/in/evanalifian/"
+    },
+    {
+      "name": "GitHub",
+      "icon": "/socials_icon/github.svg",
+      "username": "evanalifian",
+      "url": "https://github.com/evanalifian"
+    }
+  ],
+  "tech_stacks": [
+    {
+      "name": "HTML",
+      "icon": "/techs_icon/html.svg"
+    },
+    {
+      "name": "CSS",
+      "icon": "/techs_icon/css.svg"
+    },
+    {
+      "name": "JavaScript",
+      "icon": "/techs_icon/js.svg"
+    },
+    {
+      "name": "Python",
+      "icon": "/techs_icon/python.svg"
+    },
+    {
+      "name": "React",
+      "icon": "/techs_icon/react.svg"
+    },
+    {
+      "name": "React Router",
+      "icon": "/techs_icon/react-router.svg"
+    },
+    {
+      "name": "Tailwind CSS",
+      "icon": "/techs_icon/tailwindcss.svg"
+    },
+    {
+      "name": "Bootstrap",
+      "icon": "/techs_icon/bootstrap.svg"
+    }
+  ],
+  "tools": [
+    {
+      "name": "Visual Studio Code",
+      "icon": "/tools_icon/vs-code.svg"
+    },
+    {
+      "name": "Git",
+      "icon": "/tools_icon/git.svg"
+    },
+    {
+      "name": "GitHub",
+      "icon": "/tools_icon/github.svg"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Open Pre Order",
+      "img": "",
+      "github": "",
+      "techs": [
+        {
+          "name": "React",
+          "icon": "/techs_icon/react.svg"
+        },
+        {
+          "name": "React Router",
+          "icon": "/techs_icon/react-router.svg"
+        },
+        {
+          "name": "Tailwind CSS",
+          "icon": "/techs_icon/tailwindcss.svg"
+        },
+        {
+          "name": "Express",
+          "icon": "/techs_icon/express.svg"
+        }
+      ]
+    },
+    {
+      "name": "Invoice",
+      "img": "/projects/invoice.jpg",
+      "github": "",
+      "techs": [
+        {
+          "name": "React",
+          "icon": "/techs_icon/react.svg"
+        },
+        {
+          "name": "React Router",
+          "icon": "/techs_icon/react-router.svg"
+        },
+        {
+          "name": "Tailwind CSS",
+          "icon": "/techs_icon/tailwindcss.svg"
+        },
+        {
+          "name": "Express",
+          "icon": "/techs_icon/express.svg"
+        }
+      ]
+    },
+    {
+      "name": "Algoflows",
+      "img": "/projects/algoflows.jpg",
+      "github": "https://github.com/evanalifian/algoflows",
+      "techs": [
+        {
+          "name": "HTML",
+          "icon": "/techs_icon/html.svg"
+        },
+        {
+          "name": "CSS",
+          "icon": "/techs_icon/css.svg"
+        },
+        {
+          "name": "JavaScript",
+          "icon": "/techs_icon/js.svg"
+        },
+        {
+          "name": "Tailwind CSS",
+          "icon": "/techs_icon/tailwindcss.svg"
+        }
+      ]
+    },
+    {
+      "name": "React SPA Boilerplate",
+      "img": "/projects/react-spa-boilerplate.jpg",
+      "github": "https://github.com/evanalifian/react-app-boilerplate",
+      "techs": [
+        {
+          "name": "React",
+          "icon": "/techs_icon/react.svg"
+        },
+        {
+          "name": "React Router",
+          "icon": "/techs_icon/react-router.svg"
+        },
+        {
+          "name": "Tailwind CSS",
+          "icon": "/techs_icon/tailwindcss.svg"
+        }
+      ]
+    },
+    {
+      "name": "Express Web Boilerplate",
+      "img": "/projects/react-spa-boilerplate.jpg",
+      "github": "https://github.com/evanalifian/express-web-boilerplate",
+      "techs": [
+        {
+          "name": "Express",
+          "icon": "/techs_icon/express.svg"
+        }
+      ]
+    }
+  ]
+}
