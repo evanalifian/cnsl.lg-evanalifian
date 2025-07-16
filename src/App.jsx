@@ -5,18 +5,19 @@ import TechStacks from "./components/layout/TechStacks";
 import About from "./components/layout/About";
 import Projects from "./components/layout/Projects";
 import Footer from "./components/layout/Footer";
+import data from "../data.json"
 
 export default function App() {
   return (
     <>
       <HeaderNav />
       <MainContent>
-        <Jumbotron />
-        <TechStacks />
-        <About />
-        <Projects />
+        <Jumbotron alias={data.alias} tagline={data.tagline} />
+        <TechStacks techs={data.tech_stacks} />
+        <About about={data.about} />
+        <Projects projects={data.projects} />
       </MainContent>
-      <Footer />
+      <Footer {...data} />
     </>
   );
 }

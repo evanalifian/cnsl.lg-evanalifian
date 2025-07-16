@@ -1,6 +1,4 @@
-import data from "../../../data.json";
-
-export default function About() {
+export default function About({ about }) {
   return (
     <section className="space-y-8 py-28 md:text-center">
       <h2
@@ -10,7 +8,7 @@ export default function About() {
         About Me
       </h2>
       <p className="font-mono text-gray-600 md:text-xl lg:mx-auto lg:w-11/12">
-        {data.about}
+        {about}
       </p>
     </section>
   );

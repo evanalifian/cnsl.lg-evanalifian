@@ -1,6 +1,4 @@
-import data from "../../../data.json";
-
-export default function TechStacks() {
+export default function TechStacks({ techs }) {
   return (
     <section className="space-y-8 py-28">
       <h2
@@ -10,7 +8,7 @@ export default function TechStacks() {
         Currently tech that i use
       </h2>
       <ul className="flex flex-wrap gap-4 md:justify-center">
-        {data.tech_stacks.map((t) => (
+        {techs.map((t) => (
           <li key={t.name}>
             <img
               src={t.icon}

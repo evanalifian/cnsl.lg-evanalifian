@@ -1,7 +1,6 @@
-import data from "../../../data.json";
 import CardProject from "../ui/CardProject";
 
-export default function Projects() {
+export default function Projects({ projects }) {
   return (
     <section className="space-y-8 py-28 md:text-center lg:text-start">
       <h2
@@ -11,7 +10,7 @@ export default function Projects() {
         Projects
       </h2>
       <div className="grid gap-6 md:grid-cols-3">
-        {data.projects.map((p) => (
+        {projects.map((p) => (
           <CardProject key={p.name} project={p} />
         ))}
       </div>

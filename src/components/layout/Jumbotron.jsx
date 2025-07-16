@@ -1,12 +1,11 @@
-import data from "../../../data.json";
 import { FileUser } from "lucide-react";
 
-export default function Jumbotron() {
+export default function Jumbotron({ alias, tagline }) {
   return (
     <section className="space-y-8 pt-32 pb-16 md:text-center">
-      <span className="font-mono text-sm md:text-center">{data.alias}</span>
+      <span className="font-mono text-sm md:text-center">{alias}</span>
       <h1 className="mt-2 text-4xl font-medium text-gray-900 md:text-5xl lg:text-6xl">
-        {data.tagline}
+        {tagline}
       </h1>
       <a
         href="/cv.pdf"
