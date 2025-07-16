@@ -1,6 +1,6 @@
 export default function Footer(props) {
   return (
-    <footer className="border-t border-t-zinc-300 bg-white px-4">
+    <footer className="border-t-2 border-t-zinc-300 bg-white px-4">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-4 py-12 md:flex-row md:items-center">
         <section className="md:order-2 md:text-center">
           <span className="font-mono text-lg font-bold">{props.alias}</span>
