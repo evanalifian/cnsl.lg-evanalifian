@@ -4,7 +4,7 @@ export default function Footer(props) {
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-4 py-12 md:flex-row md:items-center">
         <section className="md:order-2 md:text-center">
           <span className="font-mono text-lg font-semibold">{props.alias}</span>
-          <p className="text-gray-500">&copy; 2025, cnsl.lg.</p>
+          <p className="text-gray-500 text-sm">&copy; 2025, cnsl.lg.</p>
         </section>
         <ul className="flex flex-1 flex-col md:order-1 md:flex-row md:divide-x md:divide-zinc-300">
           {props.socials.map((s) => (
