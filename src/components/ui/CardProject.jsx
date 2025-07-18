@@ -22,15 +22,29 @@ export default function CardProject({ project }) {
             />
           ))}
         </div>
-        <a
-          href={project.github}
-          target="_blank"
-          className="inline-flex items-center gap-x-2 rounded-tl-[50%] bg-zinc-950 p-2 pl-10 font-mono text-xs text-gray-50"
-        >
-          <ExternalLink size={18} />
-          See on GitHub
-        </a>
+        <GithubProject github={project.github} />
       </div>
     </div>
   );
+}
+
+function GithubProject({ github }) {
+  if (github) {
+    return (
+      <a
+        href={github}
+        target="_blank"
+        className="inline-flex items-center gap-x-2 rounded-tl-[50%] bg-zinc-950 p-2 pl-6 font-mono text-xs text-gray-50"
+      >
+        <ExternalLink size={18} />
+        See on GitHub
+      </a>
+    );
+  } else {
+    return (
+      <span className="inline-flex cursor-not-allowed items-center gap-x-2 rounded-tl-[50%] bg-zinc-950 p-2 pl-6 font-mono text-xs text-gray-50">
+        Not available
+      </span>
+    );
+  }
 }
