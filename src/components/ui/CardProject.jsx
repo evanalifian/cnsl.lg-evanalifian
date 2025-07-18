@@ -11,7 +11,7 @@ export default function CardProject({ project }) {
         </figcaption>
       </figure>
       <div className="flex justify-end bg-zinc-200/50">
-        <div className="flex flex-1 items-center gap-x-4 pl-4">
+        <div className="flex flex-1 items-center gap-x-4 px-4 overflow-x-auto">
           {project.techs.map((t) => (
             <img
               key={t.name}
