@@ -8,22 +8,6 @@ export default function ThemeToggle() {
   function handleTheme() {
     const html = document.getElementsByTagName("html")[0];
     const theme = localStorage.getItem("theme");
-
-    if (!theme) {
-      localStorage.setItem("theme", "dark");
-      html.classList.add("dark");
-      setIsDark(!isDark);
-    } else {
-      if (theme == "dark") {
-        html.classList.remove("dark");
-        localStorage.setItem("theme", "light");
-        setIsDark(!isDark);
-      } else if (theme == "light") {
-        html.classList.add("dark");
-        localStorage.setItem("theme", "dark");
-        setIsDark(!isDark);
-      }
-    }
   }
 
   return (
