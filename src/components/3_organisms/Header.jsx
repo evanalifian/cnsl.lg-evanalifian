@@ -1,5 +1,5 @@
-import DropdownMenu from "../ui/DropdownMenu";
-import NavMenu from "../ui/NavMenu";
+import DropdownMenu from "../2_molecules/DropdownMenu";
+import HeaderMenu from "../2_molecules/HaderMenu";
 
 const paths = [
   {
@@ -16,7 +16,7 @@ const paths = [
   },
 ];
 
-export default function HeaderNav() {
+export default function Header() {
   return (
     <header className="fixed top-0 z-10 w-full border-b-2 border-dashed border-zinc-300 bg-white/80 backdrop-blur-sm">
       <nav className="mx-auto flex w-full max-w-6xl items-center justify-between p-4">
@@ -28,7 +28,7 @@ export default function HeaderNav() {
         </a>
         <>
           <DropdownMenu paths={paths} />
-          <NavMenu paths={paths} />
+          <HeaderMenu paths={paths} />
         </>
       </nav>
     </header>

@@ -1,4 +1,4 @@
-export default function NavMenu({ paths }) {
+export default function HeaderMenu({ paths }) {
   return (
     <ul className="hidden gap-x-6 md:flex">
       {paths.map((p) => (

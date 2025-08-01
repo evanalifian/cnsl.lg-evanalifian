@@ -1,6 +1,6 @@
-import CardProject from "../ui/CardProject";
+import CardProject from "../2_molecules/CardProject";
 
-export default function Projects({ projects }) {
+export default function ProjectsGrid({ projects }) {
   return (
     <section className="space-y-4 py-28 md:text-center lg:text-start">
       <h2
