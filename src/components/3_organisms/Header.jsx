@@ -30,7 +30,6 @@ export default function Header() {
         <>
           <DropdownMenu paths={paths} />
           <HeaderMenu paths={paths} />
-          <ThemeToggle />
         </>
       </nav>
     </header>
