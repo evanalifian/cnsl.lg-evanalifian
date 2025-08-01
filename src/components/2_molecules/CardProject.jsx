@@ -3,15 +3,15 @@ import React from "react";
 
 export default function CardProject({ project }) {
   return (
-    <div className="overflow-hidden rounded-xl border border-zinc-300 bg-white">
+    <div className="overflow-hidden rounded-xl border border-zinc-300 bg-white dark:border-zinc-900 dark:bg-zinc-950">
       <figure>
         <img src={project.img} alt={`${project.name} img`} />
-        <figcaption className="flex items-end bg-zinc-500/80 px-4 py-1 font-medium text-gray-50">
+        <figcaption className="flex items-end bg-zinc-500/80 px-4 py-1 font-medium text-gray-50 dark:bg-zinc-700/80 dark:text-gray-200">
           {project.name}
         </figcaption>
       </figure>
       <div className="flex justify-end bg-zinc-200/50">
-        <div className="flex flex-1 items-center gap-x-4 px-4 overflow-x-auto">
+        <div className="flex flex-1 items-center gap-x-4 overflow-x-auto px-4">
           {project.techs.map((t) => (
             <img
               key={t.name}

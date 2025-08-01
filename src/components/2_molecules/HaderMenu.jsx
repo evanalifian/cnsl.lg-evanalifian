@@ -5,7 +5,7 @@ export default function HeaderMenu({ paths }) {
         <li key={p.path}>
           <a
             href={p.path}
-            className="font-mono font-medium text-gray-700 transition-colors hover:text-black"
+            className="font-mono font-medium text-gray-700 transition-colors hover:text-black dark:text-gray-300 dark:hover:text-gray-50"
           >
             {p.name}
           </a>

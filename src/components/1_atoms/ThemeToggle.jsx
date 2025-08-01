@@ -12,7 +12,11 @@ export default function ThemeToggle() {
 
   return (
     <Button type="button" onClick={handleTheme}>
-      {isDark ? <Moon /> : <SunMedium />}
+      {isDark ? (
+        <Moon className="stroke-gray-700 dark:stroke-gray-300" />
+      ) : (
+        <SunMedium className="stroke-gray-700 dark:stroke-gray-300" />
+      )}
     </Button>
   );
 }

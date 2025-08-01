@@ -7,7 +7,7 @@ export default function TechList({ techs }) {
             src={t.icon}
             alt={`${t.name} icon`}
             title={t.name}
-            className="w-7 grayscale hover:grayscale-0"
+            className="w-7 grayscale hover:grayscale-0 dark:grayscale-0"
           />
         </li>
       ))}

@@ -4,18 +4,21 @@ import { AlignJustify } from "lucide-react";
 export default function DropdownMenu({ paths }) {
   return (
     <Menu as="div" className="md:hidden">
-      <MenuButton className="rounded-md border border-zinc-300 bg-white px-2 py-1.5 outline-0 focus:outline focus:outline-offset-1 focus:outline-zinc-400">
-        <AlignJustify size={18} className="stroke-gray-700" />
+      <MenuButton className="rounded-md border border-zinc-300 bg-white px-2 py-1.5 outline-0 focus:outline focus:outline-offset-1 focus:outline-zinc-400 dark:border-zinc-900 dark:bg-black dark:focus:outline-zinc-700">
+        <AlignJustify
+          size={18}
+          className="stroke-gray-700 dark:stroke-gray-300"
+        />
       </MenuButton>
       <MenuItems
         anchor="bottom end"
-        className="z-20 mt-2 w-36 rounded-md border border-zinc-200 bg-white/75 p-1 backdrop-blur-sm outline-none"
+        className="z-20 mt-2 w-36 rounded-md border border-zinc-200 bg-white/75 p-1 backdrop-blur-sm outline-none dark:border-zinc-900 dark:bg-black/15"
       >
         {paths.map((p) => (
           <MenuItem key={p.path}>
             <a
               href={p.path}
-              className="block rounded-sm px-2 py-0.5 font-mono text-sm font-semibold text-gray-500 data-focus:bg-zinc-200/70 data-focus:text-gray-700"
+              className="block rounded-sm px-2 py-0.5 font-mono text-sm font-semibold text-gray-500 data-focus:bg-zinc-200/70 data-focus:text-gray-700 dark:text-gray-400 dark:data-focus:bg-zinc-800/70 dark:data-focus:text-gray-300"
             >
               {p.name}
             </a>
