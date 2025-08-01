@@ -1,3 +1,4 @@
+import ThemeToggle from "../1_atoms/ThemeToggle";
 import DropdownMenu from "../2_molecules/DropdownMenu";
 import HeaderMenu from "../2_molecules/HaderMenu";
 
@@ -29,6 +30,7 @@ export default function Header() {
         <>
           <DropdownMenu paths={paths} />
           <HeaderMenu paths={paths} />
+          <ThemeToggle />
         </>
       </nav>
     </header>
