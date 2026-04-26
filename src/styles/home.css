@@ -1,0 +1,15 @@
+.bracket {
+  color: #52525b;
+}
+/* Animasi halus untuk dropdown */
+#mobile-menu {
+  transition: all 0.3s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+#mobile-menu.active {
+  max-height: 300px;
+  opacity: 1;
+  margin-top: 1rem;
+}

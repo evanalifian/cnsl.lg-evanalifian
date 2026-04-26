@@ -1,30 +1,25 @@
 export default function Footer(props) {
   return (
-    <footer className="border-t-2 border-t-zinc-300 bg-white px-4">
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-4 py-12 md:flex-row md:items-center">
-        <section className="md:order-2 md:text-center">
-          <span className="font-mono text-lg font-bold">{props.alias}</span>
-          <p className="text-sm text-gray-500">&copy; 2025, cnsl.lg.</p>
-        </section>
-        <ul className="flex flex-1 flex-col md:order-1 md:flex-row md:divide-x md:divide-zinc-300">
-          {props.socials.map((s) => (
-            <li key={s.name}>
-              <a
-                href={s.url}
-                target="_blank"
-                className="font-mono text-sm text-gray-700 hover:text-black md:px-2"
-              >
-                {s.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-        <section className="flex-1 md:order-3 md:text-end">
-          <p className="font-mono text-sm text-gray-700 hover:text-black md:px-2">
-            {props.contact["email"]}
-          </p>
-        </section>
+    <footer
+      id="contact"
+      class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 border-t border-zinc-800 pt-10 pb-6 text-xs text-zinc-600 md:flex-row"
+    >
+      <p>
+        status: <span class="text-green-500">Online</span> | last_updated:
+        2026.04.23
+      </p>
+      <div class="flex space-x-6">
+        <a href="#" class="hover:text-green-400">
+          LinkedIn
+        </a>
+        <a href="#" class="hover:text-green-400">
+          GitHub
+        </a>
+        <a href="mailto:hello@evanrafa.com" class="hover:text-green-400">
+          hello@evanrafa.com
+        </a>
       </div>
+      <p>© 2026 Evan Rafa • Bangkalan</p>
     </footer>
   );
 }

@@ -1,0 +1,12 @@
+.link-card {
+  background: #0d0d0d;
+  border: 1px solid #27272a;
+  border-radius: 12px;
+  padding: 24px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.link-card:hover {
+  border-color: #4ade80;
+  background: #0f1a14;
+  transform: translateY(-4px);
+}

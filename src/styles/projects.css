@@ -1,0 +1,13 @@
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.tech-tag {
+  border: 1px solid #27272a;
+  background: #18181b;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  color: #a1a1aa;
+}

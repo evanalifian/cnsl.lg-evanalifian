@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+body {
+  font-family: "JetBrains Mono", monospace;
+  background-color: #0a0a0a;
+  color: #eaeaea;
+}
+.cmd-text {
+  color: #4ade80;
+}
