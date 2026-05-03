@@ -7,7 +7,7 @@ export default function ContentLayout() {
   return (
     <>
       <Navbar />
-      <main class="mx-auto mt-32 max-w-5xl space-y-24 pb-20">
+      <main className="mx-auto mt-32 max-w-5xl space-y-24 pb-20">
         <Outlet />
       </main>
       <Footer />

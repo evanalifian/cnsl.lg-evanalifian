@@ -5,7 +5,7 @@ export default function MainLayout({ children }) {
   return (
     <>
       <Navbar />
-      <main class="mx-auto mt-32 max-w-7xl space-y-24 pb-20">{children}</main>
+      <main className="mx-auto mt-32 max-w-7xl space-y-24 pb-20">{children}</main>
       <Footer />
     </>
   );
