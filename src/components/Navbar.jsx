@@ -7,6 +7,7 @@ import {
   Mail,
   ChevronRight,
 } from "lucide-react";
+import { Link } from "react-router";
 
 export default function Navbar() {
   const year = new Date().getFullYear()
@@ -22,22 +23,22 @@ export default function Navbar() {
       <header className="bg-glass/75 mx-auto flex max-w-2xl items-center justify-between rounded-full border border-glass-border px-8 py-4 shadow-2xl backdrop-blur-lg transition-all duration-300 hover:border-glass-borderHover">
         <div className="flex items-center space-x-2.5">
           <span className="h-2 w-2 animate-pulse rounded-full bg-white"></span>
-          <a
-            href="/"
+          <Link
+            to="/"
             className="font-mono text-sm font-bold tracking-[0.25em] text-white uppercase"
           >
             EA // {year}
-          </a>
+          </Link>
         </div>
         <nav className="hidden space-x-8 font-mono text-xs font-bold tracking-[0.15em] text-darkgray-400 uppercase md:flex">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
-              href={link.href}
+              to={link.href}
               className="flex items-center gap-2 transition-colors hover:text-white"
             >
               <link.icon size={14} /> {link.name}
-            </a>
+            </Link>
           ))}
         </nav>
         <Menu as="div" className="relative md:hidden">
@@ -52,7 +53,7 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <MenuItem key={link.name}>
                 {/* Menu Item - Typo diperbesar ke text-sm */}
-                <a
+                <Link
                   href={link.href}
                   className="group flex items-center justify-between rounded-xl px-4 py-4 font-mono text-sm tracking-widest uppercase transition-all hover:bg-white/10"
                 >
@@ -64,7 +65,7 @@ export default function Navbar() {
                     size={16}
                     className="opacity-0 transition-opacity group-hover:opacity-100"
                   />
-                </a>
+                </Link>
               </MenuItem>
             ))}
           </MenuItems>
