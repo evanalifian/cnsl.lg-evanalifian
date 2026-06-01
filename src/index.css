@@ -1,10 +1,16 @@
 @import "tailwindcss";
 
-body {
-  font-family: "JetBrains Mono", monospace;
-  background-color: #0a0a0a;
-  color: #eaeaea;
-}
-.cmd-text {
-  color: #4ade80;
+@theme {
+  --color-pureblack: #000000;
+  
+  --color-glass-bg: rgba(16, 16, 16, 0.45);
+  --color-glass-bgHover: rgba(26, 26, 26, 0.65);
+  --color-glass-border: rgba(255, 255, 255, 0.06);
+  --color-glass-borderHover: rgba(255, 255, 255, 0.12);
+
+  --color-darkgray-400: #a3a3a3;
+  --color-darkgray-500: #737373;
+  --color-darkgray-600: #404040;
+
+  --font-sans: "Inter", "SF Pro Text", ui-sans-serif, system-ui, sans-serif;
 }

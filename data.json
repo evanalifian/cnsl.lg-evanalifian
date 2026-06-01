@@ -1,188 +1,109 @@
 {
-  "name": "Evan Rafa Radya Alifian",
-  "nickname": "evanalifian",
-  "alias": "cnsl.lg",
-  "avatar": "/evan-nobg.png",
-  "tagline": "Experience to build website with React and Tailwind CSS",
-  "about": "Hello, i'm Evan Rafa Radya Alifian, a frontend developer from Bangkalan, East Java. Now i study in Universitas Trunojoyo Madura majoring informatic engineering. Curently, i learned DSA (Data Structure and Algorithms) using python.",
-  "contact": {
-    "email": "evanalifian@gmail.com",
-    "address": "Bangkalan, East Java",
-    "tel": "+62 878-5238-6596"
+  "technical_skills": {
+    "languages": ["HTML", "CSS", "JavaScript", "PHP", "Python"],
+    "frameworks": [
+      "React",
+      "Tailwind CSS",
+      "Bootstrap",
+      "Express.js",
+      "React Router",
+      "Fast API"
+    ],
+    "tools": ["VS Code", "Git", "GitHub"]
   },
-  "socials": [
+  "academic_education": [
     {
-      "name": "Instagram",
-      "icon": "/socials_icon/instagram.svg",
-      "username": "evanalifian",
-      "url": "https://instagram.com/evanalifian"
+      "institution": "Universitas Trunojoyo Madura",
+      "level_type": "Bachelor of Computer Science (S1)",
+      "major": "Informatics Engineering",
+      "status": "IN PROGRESS // BACHELOR",
+      "focus_skills": [
+        "Software Engineering",
+        "Information Retrieval Mechanics (BM25)"
+      ]
     },
     {
-      "name": "X",
-      "icon": "/socials_icon/x.svg",
-      "username": "evanalifian",
-      "url": "https://x.com/evanalifian"
-    },
-    {
-      "name": "LinkedIn",
-      "icon": "/socials_icon/linkedin.svg",
-      "username": "evanalifian",
-      "url": "https://linkedin.com/in/evanalifian/"
-    },
-    {
-      "name": "GitHub",
-      "icon": "/socials_icon/github.svg",
-      "username": "evanalifian",
-      "url": "https://github.com/evanalifian"
-    }
-  ],
-  "tech_stacks": [
-    {
-      "name": "HTML",
-      "icon": "/techs_icon/html.svg"
-    },
-    {
-      "name": "CSS",
-      "icon": "/techs_icon/css.svg"
-    },
-    {
-      "name": "JavaScript",
-      "icon": "/techs_icon/js.svg"
-    },
-    {
-      "name": "Python",
-      "icon": "/techs_icon/python.svg"
-    },
-    {
-      "name": "React",
-      "icon": "/techs_icon/react.svg"
-    },
-    {
-      "name": "React Router",
-      "icon": "/techs_icon/react-router.svg"
-    },
-    {
-      "name": "Tailwind CSS",
-      "icon": "/techs_icon/tailwindcss.svg"
-    },
-    {
-      "name": "Bootstrap",
-      "icon": "/techs_icon/bootstrap.svg"
-    }
-  ],
-  "tools": [
-    {
-      "name": "Visual Studio Code",
-      "icon": "/tools_icon/vs-code.svg"
-    },
-    {
-      "name": "Git",
-      "icon": "/tools_icon/git.svg"
-    },
-    {
-      "name": "GitHub",
-      "icon": "/tools_icon/github.svg"
+      "institution": "SMKN 2 Bangkalan",
+      "level_type": "Vocational High School",
+      "major": "Software Engineering (RPL)",
+      "status": "GRADUATED",
+      "focus_skills": [
+        "Fundamental Algorithms",
+        "Relational Databases",
+        "Object-Oriented Programming"
+      ]
     }
   ],
   "projects": [
     {
-      "name": "Open Pre Order",
-      "img": "/projects/open-pre-order.jpg",
-      "github": "",
-      "techs": [
-        {
-          "name": "React",
-          "icon": "/techs_icon/react.svg"
-        },
-        {
-          "name": "React Router",
-          "icon": "/techs_icon/react-router.svg"
-        },
-        {
-          "name": "Tailwind CSS",
-          "icon": "/techs_icon/tailwindcss.svg"
-        },
-        {
-          "name": "Express",
-          "icon": "/techs_icon/express.svg"
-        }
-      ]
+      "project_name": "open-pre-order",
+      "description": "A web application platform designed to manage and streamline open pre-order systems for vendors and customers.",
+      "technologies": ["PHP", "JavaScript", "MySQL", "Tailwind CSS"],
+      "github_repository": "https://github.com/Pashyaaaa/open-pre-order"
     },
     {
-      "name": "Invoice",
-      "img": "/projects/invoice.jpg",
-      "github": "",
-      "techs": [
-        {
-          "name": "React",
-          "icon": "/techs_icon/react.svg"
-        },
-        {
-          "name": "React Router",
-          "icon": "/techs_icon/react-router.svg"
-        },
-        {
-          "name": "Tailwind CSS",
-          "icon": "/techs_icon/tailwindcss.svg"
-        },
-        {
-          "name": "Express",
-          "icon": "/techs_icon/express.svg"
-        }
-      ]
+      "project_name": "invoice",
+      "description": "An automated billing and invoice management system built to generate, track, and log financial transactions seamlessly.",
+      "technologies": ["React.js", "Tailwind CSS", "Node.js", "Express"],
+      "github_repository": "https://github.com/Pashyaaaa/invoice"
     },
     {
-      "name": "Algoflows",
-      "img": "/projects/algoflows.jpg",
-      "github": "https://github.com/evanalifian/algoflows",
-      "techs": [
-        {
-          "name": "HTML",
-          "icon": "/techs_icon/html.svg"
-        },
-        {
-          "name": "CSS",
-          "icon": "/techs_icon/css.svg"
-        },
-        {
-          "name": "JavaScript",
-          "icon": "/techs_icon/js.svg"
-        },
-        {
-          "name": "Tailwind CSS",
-          "icon": "/techs_icon/tailwindcss.svg"
-        }
-      ]
+      "project_name": "cnsl.lg-profiles",
+      "description": "A minimalist, terminal-themed profile representation dashboard that integrates with public developer data.",
+      "technologies": ["React.js", "Tailwind CSS", "GitHub API"],
+      "github_repository": "https://github.com/evanalifian/cnsl.lg-profiles"
     },
     {
-      "name": "React SPA Boilerplate",
-      "img": "/projects/react-spa-boilerplate.jpg",
-      "github": "https://github.com/evanalifian/react-app-boilerplate",
-      "techs": [
-        {
-          "name": "React",
-          "icon": "/techs_icon/react.svg"
-        },
-        {
-          "name": "React Router",
-          "icon": "/techs_icon/react-router.svg"
-        },
-        {
-          "name": "Tailwind CSS",
-          "icon": "/techs_icon/tailwindcss.svg"
-        }
-      ]
+      "project_name": "cnsl.lg-evanalifian",
+      "description": "Personal developer portfolio and identity logs crafted with a clean, low-latency command-line interface aesthetic.",
+      "technologies": ["React.js", "Tailwind CSS", "JavaScript"],
+      "github_repository": "https://github.com/evanalifian/cnsl.lg-evanalifian"
     },
     {
-      "name": "Express Web Boilerplate",
-      "img": "/projects/react-spa-boilerplate.jpg",
-      "github": "https://github.com/evanalifian/express-web-boilerplate",
-      "techs": [
-        {
-          "name": "Express",
-          "icon": "/techs_icon/express.svg"
-        }
-      ]
+      "project_name": "mini-information-retrieval",
+      "description": "A high-performance search engine backend API developed for Mediva, leveraging the BM25 algorithm for document ranking and text retrieval.",
+      "technologies": ["Python", "FastAPI"],
+      "github_repository": "https://github.com/evanalifian/mini-information-retrieval"
+    },
+    {
+      "project_name": "mediva",
+      "description": "The official modular frontend web interface for the Mediva health information search engine platform.",
+      "technologies": ["React.js", "Tailwind CSS"],
+      "github_repository": "https://github.com/evanalifian/mediva"
+    },
+    {
+      "project_name": "pinnio",
+      "description": "A lightweight community-driven social media platform optimized for uploading, sharing, and interacting with internet memes.",
+      "technologies": ["PHP", "MySQL", "Bootstrap"],
+      "github_repository": "https://github.com/evanalifian/pinnio"
+    },
+    {
+      "project_name": "php-boilerplate",
+      "description": "A clean, production-ready PHP Model-View-Controller (MVC) architectural template designed to speed up structural backend workflows.",
+      "technologies": ["PHP", "MySQL", "Bootstrap"],
+      "github_repository": "https://github.com/evanalifian/php-boilerplate"
+    }
+  ],
+  "contacts": [
+    {
+      "platform_name": "Email",
+      "url": "mailto:your-email@example.com"
+    },
+    {
+      "platform_name": "GitHub",
+      "url": "https://github.com/evanalifian"
+    },
+    {
+      "platform_name": "LinkedIn",
+      "url": "https://linkedin.com/in/your-profile"
+    },
+    {
+      "platform_name": "X",
+      "url": "https://x.com/your-profile"
+    },
+    {
+      "platform_name": "Instagram",
+      "url": "https://instagram.com/your-profile"
     }
   ]
 }
