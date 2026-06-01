@@ -33,7 +33,7 @@ export default function Projects() {
             <span>[01]</span> <span>PRODUCTION_REGISTRY</span>
           </div>
           <div className="grid grid-cols-1 gap-8">
-            {projects.map(project => (
+            {projects.reverse().map(project => (
               <ProjectCard key={project.project_name} {...project} />
             ))}
           </div>
