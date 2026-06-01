@@ -54,7 +54,7 @@ export default function Navbar() {
               <MenuItem key={link.name}>
                 {/* Menu Item - Typo diperbesar ke text-sm */}
                 <Link
-                  href={link.href}
+                  to={link.href}
                   className="group flex items-center justify-between rounded-xl px-4 py-4 font-mono text-sm tracking-widest uppercase transition-all hover:bg-white/10"
                 >
                   <span className="flex items-center gap-3">
