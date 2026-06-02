@@ -4,6 +4,8 @@ import { SidebarContext } from "../../hooks/SidebarContext";
 import PersonalProfile from "./components/PersonalProfile";
 import TechnicalSkills from "./components/TechnicalSkills";
 import AcademinEducation from "./components/AcademinEducation";
+import TechnicalSkillsLoading from "./components/TechnicalSkillsLoading";
+import AcademinEducationLoading from "./components/AcademinEducationLoading";
 
 export default function About() {
   const sidebar = {
@@ -15,26 +17,33 @@ export default function About() {
   };
   const [skills, setSkills] = useState({});
   const [academics, setAcademics] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     async function getSkill() {
       await fetch("/data.json")
         .then((res) => res.json())
         .then((res) => {
           setSkills(res.technical_skills);
           setAcademics(res.academic_education);
+          setLoading(false);
         });
     }
 
-    getSkill()
+    getSkill();
   }, []);
 
   return (
     <SidebarContext value={sidebar}>
       <MainLayout>
         <PersonalProfile />
-        <TechnicalSkills {...skills} />
-        <AcademinEducation academics={academics} />
+        {loading ? <TechnicalSkillsLoading /> : <TechnicalSkills {...skills} />}
+        {loading ? (
+          <AcademinEducationLoading />
+        ) : (
+          <AcademinEducation academics={academics} />
+        )}
       </MainLayout>
     </SidebarContext>
   );

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import MainLayout from "../../components/MainLayout";
 import { SidebarContext } from "../../hooks/SidebarContext";
 import ContactCard from "./components/ContactCard";
+import ContactCardLoading from "./components/ContactCardLoading";
 
 export default function Contacts() {
   const sidebar = {
@@ -12,13 +13,16 @@ export default function Contacts() {
       "Open for engineering collaborations, full-stack development inquiries, or technical research discussions regarding information retrieval systems.",
   };
   const [contacts, setContacts] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     async function getContact() {
       await fetch("/data.json")
         .then((res) => res.json())
         .then((res) => {
           setContacts(res.contacts);
+          setLoading(false);
         });
     }
 
@@ -32,9 +36,13 @@ export default function Contacts() {
           <span>[01]</span> <span>AVAILABLE_CHANNELS</span>
         </div>
         <div className="grid grid-cols-1 gap-4">
-          {contacts.map((c) => (
-            <ContactCard key={c.platform_name} {...c} />
-          ))}
+          {loading ? (
+            <>
+              <ContactCardLoading />
+            </>
+          ) : (
+            contacts.map((c) => <ContactCard key={c.platform_name} {...c} />)
+          )}
         </div>
       </MainLayout>
     </SidebarContext>
