@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 export default function Project() {
   return (
@@ -23,15 +24,15 @@ export default function Project() {
         </p>
       </div>
       <div className="mt-8 border-t border-glass-border/40 pt-4">
-        <a
-          href="/projects"
+        <Link
+          to="/projects"
           className="flex w-full items-center justify-between font-mono text-xs tracking-wider text-white/50 transition-colors group-hover:text-white"
         >
           <span>open_projects_page</span>{" "}
           <span className="text-[10px] transition-transform group-hover:translate-x-0.5">
             ↗
           </span>
-        </a>
+        </Link>
       </div>
     </div>
   );
