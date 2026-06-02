@@ -22,7 +22,7 @@ export default function Projects() {
         });
     }
 
-    getSkiProjects
+    getProjects();
   }, []);
 
   return (
