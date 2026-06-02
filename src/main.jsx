@@ -5,6 +5,7 @@ import Home from "./pages/home/Home";
 import NotFound from "./pages/NotFound";
 import About from "./pages/about/About";
 import Projects from "./pages/projects/Projects";
+import Contacts from "./pages/contacts/Contacts";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -12,6 +13,7 @@ createRoot(document.getElementById("root")).render(
       <Route index element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/projects" element={<Projects />} />
+      <Route path="/contact" element={<Contacts />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   </BrowserRouter>,
