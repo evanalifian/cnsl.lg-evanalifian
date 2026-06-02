@@ -20,7 +20,7 @@ export default function Hero() {
       </div>
       <div className="w-full shrink-0 pt-4 lg:w-auto lg:pt-0">
         <a
-          href="#"
+          href="/cv.pdf"
           className="inline-flex w-full items-center justify-center rounded-xl border border-glass-border bg-white/5 px-8 py-4 font-mono text-xs font-bold tracking-widest text-white transition-all duration-300 hover:border-transparent hover:bg-white hover:text-black lg:w-auto"
         >
           DOWNLOAD_CV (PDF) ↓
