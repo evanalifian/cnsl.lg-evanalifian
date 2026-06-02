@@ -10,7 +10,7 @@ import {
 import { Link } from "react-router";
 
 export default function Navbar() {
-  const year = new Date().getFullYear()
+  const year = new Date().getFullYear();
   const navLinks = [
     { name: "Home", href: "/", icon: Home },
     { name: "About Me", href: "/about", icon: User },
@@ -19,7 +19,7 @@ export default function Navbar() {
   ];
 
   return (
-    <div className="fixed top-6 right-0 left-0 z-50 px-4">
+    <div className="fixed top-6 right-0 left-0 z-40 px-4">
       <header className="bg-glass/75 mx-auto flex max-w-2xl items-center justify-between rounded-full border border-glass-border px-8 py-4 shadow-2xl backdrop-blur-lg transition-all duration-300 hover:border-glass-borderHover">
         <div className="flex items-center space-x-2.5">
           <span className="h-2 w-2 animate-pulse rounded-full bg-white"></span>
@@ -48,7 +48,7 @@ export default function Navbar() {
 
           <MenuItems
             anchor="bottom end"
-            className="w-64 origin-top-right rounded-2xl border border-glass-border bg-pureblack/90 p-3 text-white shadow-xl backdrop-blur-md outline-none [--anchor-gap:1rem]"
+            className="z-50 w-64 origin-top-right rounded-2xl border border-glass-border bg-pureblack/90 p-3 text-white shadow-xl backdrop-blur-md outline-none [--anchor-gap:1rem]"
           >
             {navLinks.map((link) => (
               <MenuItem key={link.name}>
