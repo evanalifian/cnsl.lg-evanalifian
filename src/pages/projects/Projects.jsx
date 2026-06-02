@@ -14,7 +14,7 @@ export default function Projects() {
   const [projects, setProjects] = useState([])
 
   useEffect(() => {
-    async function getSkill() {
+    async function getProjects() {
       await fetch("/data.json")
         .then((res) => res.json())
         .then((res) => {
@@ -22,7 +22,7 @@ export default function Projects() {
         });
     }
 
-    getSkill();
+    getSkiProjects
   }, []);
 
   return (
