@@ -1,12 +1,17 @@
 import React from "react";
+import SectionContent from "../../../components/SectionContent";
 
-export default function TechnicalSkills({ frameworks = [], languages = [], tools = [] }) {
+export default function TechnicalSkills({
+  frameworks = [],
+  languages = [],
+  tools = [],
+}) {
   return (
-    <section id="skills" className="scroll-mt-32 space-y-6">
-      <div className="flex items-center space-x-2 font-mono text-[11px] font-bold tracking-[0.25em] text-white/30 uppercase">
-        <span>[02]</span> <span>TECHNICAL_SKILLS</span>
-      </div>
-
+    <SectionContent
+      pageName="about"
+      sectionName="technical-skills"
+      title="Technical_Skills"
+    >
       <div className="bg-glass space-y-8 rounded-2xl border border-glass-border p-6 font-mono text-sm backdrop-blur-xl sm:p-8">
         <div className="space-y-3">
           <span className="block text-[11px] tracking-widest text-darkgray-500">
@@ -54,6 +59,6 @@ export default function TechnicalSkills({ frameworks = [], languages = [], tools
           </div>
         </div>
       </div>
-    </section>
+    </SectionContent>
   );
 }

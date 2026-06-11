@@ -15,7 +15,7 @@ export default function Navbar() {
     { name: "Home", href: "/", icon: Home },
     { name: "About Me", href: "/about", icon: User },
     { name: "Projects", href: "/projects", icon: FolderGit2 },
-    { name: "Contact", href: "/contact", icon: Mail },
+    { name: "Contacts", href: "/contacts", icon: Mail },
   ];
 
   return (

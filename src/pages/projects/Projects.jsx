@@ -3,6 +3,7 @@ import MainLayout from "../../components/MainLayout";
 import { SidebarContext } from "../../hooks/SidebarContext";
 import ProjectCard from "./components/ProjectCard";
 import ProjectCardLoading from "./components/ProjectCardLoading";
+import SectionContent from "../../components/SectionContent";
 
 export default function Projects() {
   const sidebar = {
@@ -12,7 +13,7 @@ export default function Projects() {
     description:
       "A curated collection of software architectures, backend search engines, and modular web platforms.",
   };
-  const [projects, setProjects] = useState([])
+  const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -32,10 +33,11 @@ export default function Projects() {
   return (
     <SidebarContext value={sidebar}>
       <MainLayout>
-        <section id="featured" className="scroll-mt-32 space-y-6">
-          <div className="flex items-center space-x-2 font-mono text-[11px] font-bold tracking-[0.25em] text-white/30 uppercase">
-            <span>[01]</span> <span>PRODUCTION_REGISTRY</span>
-          </div>
+        <SectionContent
+          pageName="projects"
+          sectionName="featured"
+          title="Featured_Projects"
+        >
           <div className="grid grid-cols-1 gap-8">
             {loading ? (
               <>
@@ -50,7 +52,7 @@ export default function Projects() {
                 ))
             )}
           </div>
-        </section>
+        </SectionContent>
       </MainLayout>
     </SidebarContext>
   );

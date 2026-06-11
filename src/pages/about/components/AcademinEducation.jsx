@@ -1,12 +1,13 @@
 import React from "react";
+import SectionContent from "../../../components/SectionContent";
 
 export default function AcademinEducation({ academics = [] }) {
   return (
-    <section id="education" className="scroll-mt-32 space-y-6">
-      <div className="flex items-center space-x-2 font-mono text-[11px] font-bold tracking-[0.25em] text-white/30 uppercase">
-        <span>[03]</span> <span>ACADEMIC_EDUCATION</span>
-      </div>
-
+    <SectionContent
+      pageName="about"
+      sectionName="academic-education"
+      title="Academic_Education"
+    >
       <div className="bg-glass space-y-8 rounded-2xl border border-glass-border p-6 backdrop-blur-xl sm:p-8">
         {academics.map((m, i) => (
           <div
@@ -30,6 +31,6 @@ export default function AcademinEducation({ academics = [] }) {
           </div>
         ))}
       </div>
-    </section>
+    </SectionContent>
   );
 }
