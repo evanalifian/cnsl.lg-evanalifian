@@ -48,7 +48,7 @@ export default function Navbar() {
 
           <MenuItems
             anchor="bottom end"
-            className="z-50 w-64 origin-top-right rounded-2xl border border-glass-border bg-pureblack/90 p-3 text-white shadow-xl backdrop-blur-md outline-none [--anchor-gap:1rem]"
+            className="z-50 w-64 origin-top-right rounded-2xl border border-glass-border bg-[#141414]/95 p-3 text-white shadow-xl backdrop-blur-md outline-none [--anchor-gap:1rem]"
           >
             {navLinks.map((link) => (
               <MenuItem key={link.name}>
