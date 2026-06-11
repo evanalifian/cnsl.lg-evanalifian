@@ -5,8 +5,12 @@
   
   --color-glass-bg: rgba(16, 16, 16, 0.45);
   --color-glass-bgHover: rgba(26, 26, 26, 0.65);
-  --color-glass-border: rgba(255, 255, 255, 0.06);
-  --color-glass-borderHover: rgba(255, 255, 255, 0.12);
+  
+  /* Ditingkatkan dari 0.06 ke 0.18 agar lebih tegas namun tetap elegan */
+  --color-glass-border: rgba(255, 255, 255, 0.18);
+  
+  /* Ditingkatkan dari 0.12 ke 0.30 agar feedback hover lebih jelas */
+  --color-glass-borderHover: rgba(255, 255, 255, 0.30);
 
   --color-darkgray-400: #a3a3a3;
   --color-darkgray-500: #737373;
