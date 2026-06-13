@@ -6,9 +6,11 @@ import NotFound from "./pages/NotFound";
 import About from "./pages/about/About";
 import Projects from "./pages/projects/Projects";
 import Contacts from "./pages/contacts/Contacts";
+import ScrollToHash from "./utils/ScrollToHash";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
+  <ScrollToHash />
     <Routes>
       <Route index element={<Home />} />
       <Route path="/about" element={<About />} />
