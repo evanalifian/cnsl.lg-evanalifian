@@ -21,7 +21,9 @@ export class TextPreprocessing {
 
     this.tokens["query"] = work(this.query);
     for (let i = 0; i < this.docs.length; i++) {
-      this.tokens[this.docs[i].id] = work(this.docs[i].content);
+      // Gabungkan content dan type menjadi satu string sebelum di-tokenisasi
+      const combinedText = `${this.docs[i].content} ${this.docs[i].type}`;
+      this.tokens[this.docs[i].id] = work(combinedText);
     }
   }
 }
