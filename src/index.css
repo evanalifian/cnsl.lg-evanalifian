@@ -2,19 +2,38 @@
 
 @theme {
   --color-pureblack: #000000;
-  
+
   --color-glass-bg: rgba(16, 16, 16, 0.45);
   --color-glass-bgHover: rgba(26, 26, 26, 0.65);
-  
+
   /* Ditingkatkan dari 0.06 ke 0.18 agar lebih tegas namun tetap elegan */
   --color-glass-border: rgba(255, 255, 255, 0.18);
-  
+
   /* Ditingkatkan dari 0.12 ke 0.30 agar feedback hover lebih jelas */
-  --color-glass-borderHover: rgba(255, 255, 255, 0.30);
+  --color-glass-borderHover: rgba(255, 255, 255, 0.3);
 
   --color-darkgray-400: #a3a3a3;
   --color-darkgray-500: #737373;
   --color-darkgray-600: #404040;
 
   --font-sans: "Inter", "SF Pro Text", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Styling Scrollbar Minimalist */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px; /* Lebar scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent; /* Background track transparan */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #333; /* Warna abu-abu gelap */
+  border-radius: 20px; /* Membuat ujung membulat */
+  border: 2px solid #141414; /* Memberikan efek padding agar tidak menyentuh pinggiran */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Warna sedikit lebih terang saat di-hover */
 }

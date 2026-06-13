@@ -163,27 +163,34 @@ export default function Navbar() {
             </div>
 
             {/* Area Hasil Pencarian */}
-            <div className="mt-4 max-h-60 space-y-2 overflow-y-auto">
-              {results.length > 0
-                ? results.map((item, index) => (
-                    <Link
-                      key={index}
-                      to={item.url}
-                      className="block rounded-xl p-3 transition-colors hover:bg-white/5"
-                    >
-                      <div className="font-mono text-sm text-white">
-                        {item.title}
-                      </div>
-                      <div className="font-mono text-[10px] text-darkgray-400">
-                        Score: {item.score.toFixed(2)}
-                      </div>
-                    </Link>
-                  ))
-                : query && (
-                    <div className="pt-4 text-center font-mono text-[10px] text-darkgray-600 uppercase">
-                      No results found.
-                    </div>
-                  )}
+            <div className="custom-scrollbar mt-4 max-h-60 space-y-2 overflow-y-auto">
+              {results.map((item, index) => (
+                <Link
+                  key={index}
+                  to={item.url}
+                  className="group block rounded-xl border border-transparent p-4 transition-all hover:border-white/5 hover:bg-white/5"
+                >
+                  {/* Title & Type */}
+                  <div className="mb-1 flex items-center justify-between">
+                    <span className="font-mono text-sm font-bold text-white">
+                      {item.title}
+                    </span>
+                    <span className="rounded-full bg-white/5 px-2 py-0.5 text-[9px] tracking-wider text-darkgray-400 uppercase">
+                      {item.type}
+                    </span>
+                  </div>
+
+                  {/* Content */}
+                  <p className="mb-2 line-clamp-2 font-mono text-[11px] text-darkgray-400">
+                    {item.content}
+                  </p>
+
+                  {/* Score */}
+                  <div className="mt-3 font-mono text-[9px] text-darkgray-600 uppercase">
+                    Score: {item.score.toFixed(2)}
+                  </div>
+                </Link>
+              ))}
             </div>
           </DialogPanel>
         </div>
