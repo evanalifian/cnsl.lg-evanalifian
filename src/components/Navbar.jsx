@@ -169,6 +169,10 @@ export default function Navbar() {
                   <Link
                     key={index}
                     to={item.url}
+                    onClick={() => {
+                      setIsOpen(false);
+                      setQuery("");
+                    }}
                     className="group block rounded-xl border border-transparent p-4 transition-all hover:border-white/5 hover:bg-white/5"
                   >
                     <div className="mb-1 flex items-center justify-between">
