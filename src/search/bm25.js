@@ -6,7 +6,6 @@ export class BM25 {
     this.docs = docs;
     this.k1 = k1;
     this.b = b;
-    // Ambil docId yang valid saja
     this.docIds = Object.keys(this.tokens).filter(
       (k) => k !== "query" && k !== "type",
     );

@@ -14,8 +14,6 @@ export class InvertedIndex {
   #insertTokens(tokens) {
     const tokenKeys = Object.keys(tokens);
     for (let i = 0; i < tokenKeys.length; i++) {
-      // Kita abaikan 'query' dan 'type' agar tidak dianggap sebagai dokumen utama
-      // Jika 'type' ingin diindeks, sebaiknya digabungkan di Preprocessing
       if (!["query", "type"].includes(tokenKeys[i])) {
         this.tokens[tokenKeys[i]] = tokens[tokenKeys[i]];
       }
