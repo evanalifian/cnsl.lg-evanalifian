@@ -57,8 +57,8 @@ export default function Navbar() {
 
   return (
     <div className="fixed top-6 right-0 left-0 z-40 px-4">
-      <header className="bg-glass/75 mx-auto grid max-w-4xl grid-cols-[1fr_auto_1fr] items-center rounded-full border border-glass-border px-6 py-4 shadow-2xl backdrop-blur-lg transition-all duration-300 hover:border-glass-borderHover">
-        {/* Kolom 1: Logo (Kiri) */}
+      <header className="bg-glass/75 mx-auto grid max-w-4xl grid-cols-[1fr_auto] items-center rounded-full border border-glass-border px-6 py-4 shadow-2xl backdrop-blur-lg transition-all duration-300 hover:border-glass-borderHover md:grid-cols-[1fr_auto_1fr]">
+        {/* Kolom 1: Logo */}
         <div className="flex items-center justify-start space-x-3">
           <span className="h-2 w-2 animate-pulse rounded-full bg-white"></span>
           <Link
@@ -69,8 +69,8 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Kolom 2: Navigasi (Tengah - Hanya muncul di md ke atas) */}
-        <nav className="hidden space-x-8 font-mono text-xs font-bold tracking-[0.15em] text-darkgray-400 uppercase md:flex">
+        {/* Kolom 2: Navigasi (Hanya muncul di desktop/md) */}
+        <nav className="hidden justify-center space-x-8 font-mono text-xs font-bold tracking-[0.15em] text-darkgray-400 uppercase md:flex">
           {navLinks.map((link) => (
             <Link
               key={link.name}
@@ -82,9 +82,8 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Kolom 3: Action Group (Kanan) */}
+        {/* Kolom 3: Action Group (Search + Mobile Menu) */}
         <div className="flex items-center justify-end gap-2 sm:gap-4">
-          {/* Search Button */}
           <button
             onClick={() => setIsOpen(true)}
             className="group flex items-center gap-3 rounded-full border border-transparent px-3 py-1.5 transition-all duration-300 hover:border-glass-border hover:bg-white/5"
@@ -100,7 +99,6 @@ export default function Navbar() {
             </span>
           </button>
 
-          {/* Mobile Menu Trigger */}
           <div className="md:hidden">
             <Menu as="div" className="relative">
               <MenuButton className="p-2 text-white transition-colors outline-none hover:text-darkgray-400">
