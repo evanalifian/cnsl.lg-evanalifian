@@ -44,11 +44,22 @@ export default function Navbar() {
     return () => clearTimeout(handler);
   }, [query]);
 
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === "k") {
+        e.preventDefault();
+        setIsOpen(true);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   return (
     <div className="fixed top-6 right-0 left-0 z-40 px-4">
-      <header className="bg-glass/75 mx-auto flex max-w-2xl items-center justify-between rounded-full border border-glass-border px-6 py-4 shadow-2xl backdrop-blur-lg transition-all duration-300 hover:border-glass-borderHover">
-        {/* Logo Section - Font tetap */}
-        <div className="flex items-center space-x-3">
+      <header className="bg-glass/75 mx-auto grid max-w-4xl grid-cols-[1fr_auto_1fr] items-center rounded-full border border-glass-border px-6 py-4 shadow-2xl backdrop-blur-lg transition-all duration-300 hover:border-glass-borderHover">
+        {/* Kolom 1: Logo (Kiri) */}
+        <div className="flex items-center justify-start space-x-3">
           <span className="h-2 w-2 animate-pulse rounded-full bg-white"></span>
           <Link
             to="/"
@@ -58,57 +69,67 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Action Group */}
-        <div className="flex items-center gap-2 sm:gap-4">
-          {/* Desktop Nav - Font & Ikon tetap ada */}
-          <nav className="hidden space-x-6 font-mono text-xs font-bold tracking-[0.15em] text-darkgray-400 uppercase md:flex">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.href}
-                className="flex items-center gap-2 transition-colors hover:text-white"
-              >
-                <link.icon size={14} /> {link.name}
-              </Link>
-            ))}
-          </nav>
+        {/* Kolom 2: Navigasi (Tengah - Hanya muncul di md ke atas) */}
+        <nav className="hidden space-x-8 font-mono text-xs font-bold tracking-[0.15em] text-darkgray-400 uppercase md:flex">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              to={link.href}
+              className="flex items-center gap-2 transition-colors hover:text-white"
+            >
+              <link.icon size={14} /> {link.name}
+            </Link>
+          ))}
+        </nav>
 
+        {/* Kolom 3: Action Group (Kanan) */}
+        <div className="flex items-center justify-end gap-2 sm:gap-4">
           {/* Search Button */}
           <button
             onClick={() => setIsOpen(true)}
-            className="p-2 text-darkgray-400 transition-colors hover:text-white"
+            className="group flex items-center gap-3 rounded-full border border-transparent px-3 py-1.5 transition-all duration-300 hover:border-glass-border hover:bg-white/5"
           >
-            <Search size={18} />
+            <Search
+              size={18}
+              className="text-darkgray-400 transition-colors group-hover:text-white"
+            />
+            <span className="hidden items-center gap-1 rounded-md border border-glass-border bg-black/20 px-2 py-0.5 font-mono text-[10px] font-medium tracking-widest text-darkgray-500 uppercase shadow-inner group-hover:border-white/20 group-hover:text-white md:flex">
+              <kbd className="not-italic">Ctrl</kbd>
+              <span className="opacity-50">+</span>
+              <kbd className="not-italic">K</kbd>
+            </span>
           </button>
 
           {/* Mobile Menu Trigger */}
-          <Menu as="div" className="relative md:hidden">
-            <MenuButton className="p-2 text-white transition-colors outline-none hover:text-darkgray-400">
-              <MenuIcon size={24} />
-            </MenuButton>
-            <MenuItems
-              anchor="bottom end"
-              className="z-50 w-64 origin-top-right rounded-2xl border border-glass-border bg-[#141414]/95 p-3 text-white shadow-xl backdrop-blur-md outline-none [--anchor-gap:1rem]"
-            >
-              {navLinks.map((link) => (
-                <MenuItem key={link.name}>
-                  <Link
-                    to={link.href}
-                    className="group flex items-center justify-between rounded-xl px-4 py-4 font-mono text-xs tracking-widest uppercase transition-all hover:bg-white/10"
-                  >
-                    <span className="flex items-center gap-3">
-                      <link.icon size={16} className="text-darkgray-400" />{" "}
-                      {link.name}
-                    </span>
-                    <ChevronRight
-                      size={16}
-                      className="opacity-0 transition-opacity group-hover:opacity-100"
-                    />
-                  </Link>
-                </MenuItem>
-              ))}
-            </MenuItems>
-          </Menu>
+          <div className="md:hidden">
+            <Menu as="div" className="relative">
+              <MenuButton className="p-2 text-white transition-colors outline-none hover:text-darkgray-400">
+                <MenuIcon size={20} />
+              </MenuButton>
+              <MenuItems
+                anchor="bottom end"
+                className="z-50 w-64 origin-top-right rounded-2xl border border-glass-border bg-[#141414]/95 p-3 text-white shadow-xl backdrop-blur-md outline-none [--anchor-gap:1rem]"
+              >
+                {navLinks.map((link) => (
+                  <MenuItem key={link.name}>
+                    <Link
+                      to={link.href}
+                      className="group flex items-center justify-between rounded-xl px-4 py-4 font-mono text-xs tracking-widest uppercase transition-all hover:bg-white/10"
+                    >
+                      <span className="flex items-center gap-3">
+                        <link.icon size={16} className="text-darkgray-400" />{" "}
+                        {link.name}
+                      </span>
+                      <ChevronRight
+                        size={16}
+                        className="opacity-0 transition-opacity group-hover:opacity-100"
+                      />
+                    </Link>
+                  </MenuItem>
+                ))}
+              </MenuItems>
+            </Menu>
+          </div>
         </div>
       </header>
 
@@ -136,12 +157,9 @@ export default function Navbar() {
                 placeholder="Search repository..."
                 className="w-full bg-transparent font-mono text-sm text-white outline-none placeholder:text-darkgray-500"
               />
-              <button
-                onClick={() => setIsOpen(false)}
-                className="font-mono text-xs text-darkgray-500 uppercase hover:text-white"
-              >
+              <span className="font-mono text-xs text-darkgray-500 uppercase">
                 Esc
-              </button>
+              </span>
             </div>
 
             {/* Area Hasil Pencarian */}
