@@ -164,33 +164,54 @@ export default function Navbar() {
 
             {/* Area Hasil Pencarian */}
             <div className="custom-scrollbar mt-4 max-h-60 space-y-2 overflow-y-auto">
-              {results.map((item, index) => (
-                <Link
-                  key={index}
-                  to={item.url}
-                  className="group block rounded-xl border border-transparent p-4 transition-all hover:border-white/5 hover:bg-white/5"
-                >
-                  {/* Title & Type */}
-                  <div className="mb-1 flex items-center justify-between">
-                    <span className="font-mono text-sm font-bold text-white">
-                      {item.title}
-                    </span>
-                    <span className="rounded-full bg-white/5 px-2 py-0.5 text-[9px] tracking-wider text-darkgray-400 uppercase">
-                      {item.type}
-                    </span>
-                  </div>
+              {results.length > 0 ? (
+                results.map((item, index) => (
+                  <Link
+                    key={index}
+                    to={item.url}
+                    className="group block rounded-xl border border-transparent p-4 transition-all hover:border-white/5 hover:bg-white/5"
+                  >
+                    <div className="mb-1 flex items-center justify-between">
+                      <span className="font-mono text-sm font-bold text-white">
+                        {item.title}
+                      </span>
+                      <span className="rounded-full bg-white/5 px-2 py-0.5 text-[9px] tracking-wider text-darkgray-400 uppercase">
+                        {item.type}
+                      </span>
+                    </div>
+                    <p className="mb-2 line-clamp-2 font-mono text-[11px] text-darkgray-400">
+                      {item.content}
+                    </p>
 
-                  {/* Content */}
-                  <p className="mb-2 line-clamp-2 font-mono text-[11px] text-darkgray-400">
-                    {item.content}
+                    {/* Score & Metadata */}
+                    <div className="mt-3 flex items-center justify-between">
+                      <div className="font-mono text-[9px] text-darkgray-600 uppercase">
+                        Score: {item.score.toFixed(2)}
+                      </div>
+                    </div>
+                  </Link>
+                ))
+              ) : query.length > 0 ? (
+                /* State: Tidak ada hasil ditemukan */
+                <div className="flex flex-col items-center justify-center py-12 text-center">
+                  <div className="mb-3 rounded-full bg-white/5 p-3 text-darkgray-600">
+                    <Search size={24} strokeWidth={1.5} />
+                  </div>
+                  <h3 className="font-mono text-sm tracking-widest text-white uppercase">
+                    No results
+                  </h3>
+                  <p className="mt-1 max-w-50 font-mono text-[10px] text-darkgray-500">
+                    We couldn't find any documents matching "{query}"
                   </p>
-
-                  {/* Score */}
-                  <div className="mt-3 font-mono text-[9px] text-darkgray-600 uppercase">
-                    Score: {item.score.toFixed(2)}
-                  </div>
-                </Link>
-              ))}
+                </div>
+              ) : (
+                /* State: Default (Belum mengetik) */
+                <div className="border-t border-glass-border py-8 text-center">
+                  <p className="font-mono text-[10px] tracking-widest text-darkgray-500 uppercase">
+                    Type to search projects, skills, or contacts
+                  </p>
+                </div>
+              )}
             </div>
           </DialogPanel>
         </div>
