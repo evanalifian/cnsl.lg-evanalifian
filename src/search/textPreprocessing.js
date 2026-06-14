@@ -17,7 +17,7 @@ export class TextPreprocessing {
 
     this.tokens["query"] = work(this.query);
     for (let i = 0; i < this.docs.length; i++) {
-      const combinedText = `${this.docs[i].content} ${this.docs[i].type}`;
+      const combinedText = `${this.docs[i].content} ${this.docs[i].type} ${this.docs[i].pageName || ""}`;
       this.tokens[this.docs[i].id] = work(combinedText);
     }
   }

@@ -39,22 +39,20 @@ export default function Navbar() {
       } else {
         setResults([]);
       }
-    }, 300); // Tunggu 300ms setelah user berhenti mengetik
+    }, 300);
 
     return () => clearTimeout(handler);
   }, [query]);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
-      // 1. Cek apakah user sedang mengetik di elemen input/textarea/editable
       const isTyping =
         e.target.tagName === "INPUT" ||
         e.target.tagName === "TEXTAREA" ||
         e.target.isContentEditable;
 
-      // 2. Logika pencocokan shortcut
       const triggerCtrlK = (e.ctrlKey || e.metaKey) && e.key === "k";
-      const triggerSlash = e.key === "/" && !isTyping; // Hanya aktif jika user tidak sedang mengetik
+      const triggerSlash = e.key === "/" && !isTyping;
 
       if (triggerCtrlK || triggerSlash) {
         e.preventDefault();
@@ -65,6 +63,18 @@ export default function Navbar() {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
+
+  // Logika Pengelompokan (Grouping Logic) berdasarkan pageName -> type
+  const groupedResults = results.reduce((acc, item) => {
+    const page = item.pageName || "General";
+    const type = item.type || "Other";
+
+    if (!acc[page]) acc[page] = {};
+    if (!acc[page][type]) acc[page][type] = [];
+
+    acc[page][type].push(item);
+    return acc;
+  }, {});
 
   return (
     <div className="fixed top-6 right-0 left-0 z-40 px-4">
@@ -80,7 +90,7 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Kolom 2: Navigasi (Hanya muncul di desktop/md) */}
+        {/* Kolom 2: Navigasi */}
         <nav className="hidden justify-center space-x-8 font-mono text-xs font-bold tracking-[0.15em] text-darkgray-400 uppercase md:flex">
           {navLinks.map((link) => (
             <Link
@@ -93,7 +103,7 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Kolom 3: Action Group (Search + Mobile Menu) */}
+        {/* Kolom 3: Action Group */}
         <div className="flex items-center justify-end gap-2 sm:gap-4">
           <button
             onClick={() => setIsOpen(true)}
@@ -162,7 +172,7 @@ export default function Navbar() {
               <input
                 autoFocus
                 value={query}
-                onChange={(e) => setQuery(e.target.value)} // Update state query
+                onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search repository..."
                 className="w-full bg-transparent font-mono text-sm text-white outline-none placeholder:text-darkgray-500"
               />
@@ -171,38 +181,50 @@ export default function Navbar() {
               </span>
             </div>
 
-            {/* Area Hasil Pencarian */}
-            <div className="custom-scrollbar mt-4 max-h-60 space-y-2 overflow-y-auto">
+            {/* Area Hasil Pencarian Terkelompok */}
+            <div className="custom-scrollbar mt-4 max-h-80 space-y-4 overflow-y-auto pr-1">
               {results.length > 0 ? (
-                results.map((item, index) => (
-                  <Link
-                    key={index}
-                    to={item.url}
-                    onClick={() => {
-                      setIsOpen(false);
-                      setQuery("");
-                    }}
-                    className="group block rounded-xl border border-transparent p-4 transition-all hover:border-white/5 hover:bg-white/5"
-                  >
-                    <div className="mb-1 flex items-center justify-between">
-                      <span className="font-mono text-sm font-bold text-white">
-                        {item.title}
-                      </span>
-                      <span className="rounded-full bg-white/5 px-2 py-0.5 text-[9px] tracking-wider text-darkgray-400 uppercase">
-                        {item.type}
-                      </span>
+                Object.keys(groupedResults).map((pageName) => (
+                  <div key={pageName} className="space-y-3">
+                    {/* Header Nama Halaman */}
+                    <div className="sticky top-0 border-b border-zinc-900 bg-[#141414] py-1 font-mono text-[10px] font-bold tracking-[0.2em] text-zinc-500 uppercase">
+                      // PAGE: {pageName}
                     </div>
-                    <p className="mb-2 line-clamp-2 font-mono text-[11px] text-darkgray-400">
-                      {item.content}
-                    </p>
 
-                    {/* Score & Metadata */}
-                    <div className="mt-3 flex items-center justify-between">
-                      <div className="font-mono text-[9px] text-darkgray-600 uppercase">
-                        Score: {item.score.toFixed(2)}
+                    {Object.keys(groupedResults[pageName]).map((type) => (
+                      <div key={type} className="space-y-1 pl-2">
+                        {/* Sub-header tipe data */}
+                        <div className="font-mono text-[9px] tracking-wider text-zinc-600 uppercase">
+                          • {type}s
+                        </div>
+
+                        {/* List Item */}
+                        {groupedResults[pageName][type].map((item, index) => (
+                          <Link
+                            key={index}
+                            to={item.url}
+                            onClick={() => {
+                              setIsOpen(false);
+                              setQuery("");
+                            }}
+                            className="group block rounded-xl border border-transparent p-3 transition-all hover:border-white/5 hover:bg-white/5"
+                          >
+                            <div className="mb-1 flex items-center justify-between">
+                              <span className="font-mono text-xs font-bold text-white group-hover:text-zinc-300">
+                                {item.title}
+                              </span>
+                              <div className="font-mono text-[9px] text-darkgray-600 uppercase">
+                                Score: {item.score.toFixed(2)}
+                              </div>
+                            </div>
+                            <p className="line-clamp-2 font-mono text-[10px] text-darkgray-400">
+                              {item.content}
+                            </p>
+                          </Link>
+                        ))}
                       </div>
-                    </div>
-                  </Link>
+                    ))}
+                  </div>
                 ))
               ) : query.length > 0 ? (
                 /* State: Tidak ada hasil ditemukan */

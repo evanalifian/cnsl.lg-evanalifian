@@ -17,6 +17,7 @@ export async function buildDocuments() {
       metadata: {
         category: "language",
       },
+      pageName: "About Me",
       route: "/about",
       anchor: "technical-skills",
       url: "/about#technical-skills",
@@ -32,6 +33,7 @@ export async function buildDocuments() {
       metadata: {
         category: "framework",
       },
+      pageName: "About Me",
       route: "/about",
       anchor: "technical-skills",
       url: "/about#technical-skills",
@@ -47,6 +49,7 @@ export async function buildDocuments() {
       metadata: {
         category: "tool",
       },
+      pageName: "About Me",
       route: "/about",
       anchor: "technical-skills",
       url: "/about#technical-skills",
@@ -73,6 +76,7 @@ export async function buildDocuments() {
         major: education.major,
         status: education.status,
       },
+      pageName: "About Me",
       route: "/about",
       anchor: "academic-education",
       url: "/about#academic-education",
@@ -100,6 +104,7 @@ export async function buildDocuments() {
         technologies: project.technologies,
         github: project.github_repository,
       },
+      pageName: "Projects",
       route: "/projects",
       anchor: null,
       // anchor: project.project_name,
@@ -126,6 +131,7 @@ export async function buildDocuments() {
       metadata: {
         url: contact.url,
       },
+      pageName: "Contacts",
       route: "/contacts",
       anchor: null,
       // anchor: platform_name,
