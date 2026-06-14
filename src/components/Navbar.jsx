@@ -208,8 +208,8 @@ export default function Navbar() {
                 </div>
               ) : (
                 /* State: Default (Belum mengetik) */
-                <div className="border-t border-glass-border py-8 text-center">
-                  <p className="font-mono text-[10px] tracking-widest text-darkgray-500 uppercase">
+                <div className="py-8 text-center">
+                  <p className="font-mono text-xs tracking-widest text-darkgray-500 uppercase">
                     Type to search projects, skills, or contacts
                   </p>
                 </div>

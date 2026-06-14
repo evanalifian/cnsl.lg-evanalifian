@@ -32,16 +32,24 @@ export class BM25 {
       let totalDocScore = 0;
 
       for (const queryTerm of queryTokens) {
-        if (!this.corpusTable[queryTerm]) continue;
+        const regexPattern = new RegExp(`^${queryTerm}`, "i");
 
-        const tf = this.corpusTable[queryTerm][docId] || 0;
-        const idf = this.idfTable[queryTerm] || 0;
+        const matchingTerms = Object.keys(this.corpusTable).filter((term) =>
+          regexPattern.test(term),
+        );
 
-        const numerator = tf * (this.k1 + 1);
-        const denominator =
-          tf + this.k1 * (1 - this.b + this.b * (docLength / this.avgdl));
+        if (matchingTerms.length === 0) continue;
 
-        totalDocScore += idf * (numerator / denominator);
+        for (const matchedTerm of matchingTerms) {
+          const tf = this.corpusTable[matchedTerm][docId] || 0;
+          const idf = this.idfTable[matchedTerm] || 0;
+
+          const numerator = tf * (this.k1 + 1);
+          const denominator =
+            tf + this.k1 * (1 - this.b + this.b * (docLength / this.avgdl));
+
+          totalDocScore += idf * (numerator / denominator);
+        }
       }
 
       if (totalDocScore > 0) {
