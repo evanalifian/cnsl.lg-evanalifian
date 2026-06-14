@@ -46,11 +46,22 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if ((e.ctrlKey || e.metaKey) && e.key === "k") {
+      // 1. Cek apakah user sedang mengetik di elemen input/textarea/editable
+      const isTyping =
+        e.target.tagName === "INPUT" ||
+        e.target.tagName === "TEXTAREA" ||
+        e.target.isContentEditable;
+
+      // 2. Logika pencocokan shortcut
+      const triggerCtrlK = (e.ctrlKey || e.metaKey) && e.key === "k";
+      const triggerSlash = e.key === "/" && !isTyping; // Hanya aktif jika user tidak sedang mengetik
+
+      if (triggerCtrlK || triggerSlash) {
         e.preventDefault();
         setIsOpen(true);
       }
     };
+
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
